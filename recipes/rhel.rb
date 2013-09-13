@@ -9,8 +9,8 @@
 
 include_recipe "build-essential"
 
-%w[pkgconfig glib2-devel gettext libxml2-devel pango-devel cairo-devel].each do |package|
-  package "#{package}" do
+%w[pkgconfig glib2-devel gettext libxml2-devel pango-devel cairo-devel].each do |package_name|
+  package package_name do
     action :install
   end
 end

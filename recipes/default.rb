@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-user "#{node.default['growthforecast']['user']['name']}" do
+user_name = node.default['growthforecast']['user']['name']
+
+user user_name do
   supports :manage_home => true
 end
 
