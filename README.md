@@ -3,7 +3,7 @@
 GrowthForecast Cookbook
 =======================
 
-This cookbook is [GrorwhForecast]() install.
+This cookbook is [GrowthForecast](https://github.com/kazeburo/GrowthForecast) install.
 
 This cookbook makes your favorite breakfast sandwhich.
 
