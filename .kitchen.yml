@@ -1,0 +1,41 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.4
+
+suites:
+  - name: default
+    run_list:
+      - recipe[growthforecast::default]
+    attributes:
+      mysql:
+        server_debian_password: "test"
+        server_repl_password: "test"
+        server_root_password: "test"
+      growthforecast:
+        system:
+          perlbrew_ver: "perl-5.18.0"
+        user:
+          name: "grf"
+        system:
+          data_dir: "/home/growthf/grf-data"
+        database:
+          db_name: "growthforecast"
+          user_name: "growthforecast"
+          password: "test"
+          host: "localhost"
+      perlbrew:
+        perlbrew_root: "/opt/perlberw"
+        perls: 
+          - "perl-5.18.0"
+        install_options: "-j 4"
+        cpanm_options: ""
+        self_upgrade: true
+
+busser:
+  sudo: true

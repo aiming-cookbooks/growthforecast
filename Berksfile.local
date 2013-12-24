@@ -1,0 +1,6 @@
+site :opscode
+
+cookbook 'perlbrew', github: 'aiming-cookbooks/perlbrew'
+cookbook 'disable-iptables', github: 'aiming-cookbooks/disable-iptables'
+
+metadata
