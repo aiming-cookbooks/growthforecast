@@ -4,10 +4,22 @@
 #
 # Copyright 2013, Aiming, Inc.
 #
-# All rights reserved - Do Not Redistribute
-#
+
+include_recipe "yum::remi"
+
+execute "Comment out of exclude-line." do
+  command <<-EOF
+    sed -i "s/^exclude=kernel/#exclude=kernel/g" /etc/yum.conf
+  EOF
+
+  action :run
+end
 
 include_recipe "build-essential"
+include_recipe "mysql::client"
+include_recipe "mysql::server"
+include_recipe "perlbrew::default"
+include_recipe "perlbrew::profile"
 
 %w[pkgconfig glib2-devel gettext libxml2-devel pango-devel cairo-devel].each do |package_name|
   package package_name do
@@ -21,7 +33,6 @@ execute "Setup mysql database" do
   group "root"
 
   root_db_pass = node['mysql']['server_root_password']
-
   command <<-EOF
     mysqladmin -h localhost -u root -p#{root_db_pass} create growthforecast;
   EOF
@@ -44,21 +55,5 @@ execute "Create growthforecast user to mysql" do
   not_if "mysql -u #{db_user} -p#{db_pass} growthforecast -e"
 end
 
-# Setup upstart script of growthforecast
-template "/etc/init/growthforecast.conf" do
-  source "growthforecast.service.conf.erb"
-  owner  "root"
-  group  "root"
-  mode   0644
-
-  notifies :start, "service[growthforecast]" 
-end
-
-# Service setting of growthforecast
-service "growthforecast" do
-  supports :restart => true, :reload => true, :status => true
-  action   :nothing
-  provider Chef::Provider::Service::Upstart
-end 
-
-include_recipe "growthforecast::cpanm_install"
+include_recipe "growthforecast::cpanm_dbd_mysql"
+include_recipe "growthforecast::cpanm_growthforecast"
