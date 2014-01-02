@@ -5,5 +5,6 @@ group :development do
   gem 'berkshelf'
   gem 'serverspec'
   gem 'knife-solo'
+  gem 'chef'
+  gem 'kitchen-vagrant'
 end
-gem 'kitchen-vagrant'
