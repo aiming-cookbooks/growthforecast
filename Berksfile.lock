@@ -1,24 +1,32 @@
 {
   "sources": {
-    "perlbrew": {
-      "locked_version": "0.1.0",
-      "git": "git://github.com/aiming-cookbooks/perlbrew.git",
-      "ref": "19447cd1fecac3411d8f36707339d3a473b2ecc2"
-    },
     "growthforecast": {
       "path": "."
+    },
+    "perlbrew": {
+      "locked_version": "0.2.0",
+      "git": "git://github.com/aiming-cookbooks/perlbrew.git",
+      "ref": "a21ef2247cc6268e4aac02015e5751161a06d600"
+    },
+    "yum-remi": {
+      "locked_version": "0.1.1",
+      "git": "git://github.com/aiming-cookbooks/yum-remi.git",
+      "ref": "3ad3e3b2d0c8d5f31cfe124e8a06f9ab3d8ffcc8"
+    },
+    "yum": {
+      "locked_version": "3.0.4"
+    },
+    "mysql": {
+      "locked_version": "4.0.14"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
     },
     "build-essential": {
       "locked_version": "1.4.2"
     },
-    "yum": {
-      "locked_version": "2.3.0"
-    },
-    "mysql": {
-      "locked_version": "4.0.4"
-    },
-    "openssl": {
-      "locked_version": "1.1.0"
+    "apt": {
+      "locked_version": "2.3.4"
     }
   }
 }

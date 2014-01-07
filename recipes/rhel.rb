@@ -5,7 +5,8 @@
 # Copyright 2013, Aiming, Inc.
 #
 
-include_recipe "yum::remi"
+include_recipe "yum"
+include_recipe "yum-remi"
 
 execute "Comment out of exclude-line." do
   command <<-EOF
