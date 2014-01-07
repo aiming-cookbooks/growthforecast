@@ -27,7 +27,7 @@
       "perlbrew": {
         "perlbrew_root": "/opt/perlbrew",
         "perls": [
-          "perl-5.18.0
+          "perl-5.18.0"
         ],
         "install_options": "-j 4",
         "cpanm_options": "",
