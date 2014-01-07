@@ -1,0 +1,42 @@
+{
+  "name": "growthforecast",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Install growthforecast",
+  "run_list": [
+    "recipe[growthforecast::default]"
+  ],
+  "default_attributes": {
+    "mysql": {
+      "server_debian_password": "test",
+      "server_repl_password": "test",
+      "server_root_password": "test"
+    },
+    "growthforecast": {
+      "system": {
+        "perlbrew_ver": "perl-5.18.0"
+      },
+      "user": {
+        "name": "growthf"
+      },
+      "system": {
+        "data_dir": "/home/growthf/grf-data"
+      },
+      "database": {
+        "db_name": "growthforecast",
+        "user_name": "growthforecast",
+        "password": "",
+        "host": "localhost"
+      },
+      "perlbrew": {
+        "perlbrew_root": "/opt/perlbrew",
+        "perls": [
+          "perl-5.18.0"
+        ],
+        "install_options": "-j 4",
+        "cpanm_options": "",
+        "self_upgrade": true
+      }
+    }
+  }
+}
