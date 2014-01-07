@@ -1,38 +1,37 @@
 {
   "sources": {
+    "growthforecast": {
+      "path": "."
+    },
     "perlbrew": {
-      "locked_version": "0.1.0",
+      "locked_version": "0.2.0",
       "git": "git://github.com/aiming-cookbooks/perlbrew.git",
-      "ref": "4e2c0c78a459d7dc960b2f420cdf3ceef6705fb3"
+      "ref": "cbc09bb8ac3c85953bf8d65ffba7675f83de3ea7"
+    },
+    "yum-remi": {
+      "locked_version": "0.1.1",
+      "git": "git://github.com/aiming-cookbooks/yum-remi.git",
+      "ref": "b0094658ea4249ea4dd62f5cd9a095f94a6c3dfc"
     },
     "disable-iptables": {
       "locked_version": "0.1.0",
       "git": "git://github.com/aiming-cookbooks/disable-iptables.git",
-      "ref": "dcfcb258af5381a8e34cf493eaef46470bee1854"
-    },
-    "growthforecast": {
-      "path": "."
-    },
-    "apt": {
-      "locked_version": "2.0.0"
+      "ref": "2eab857854d251fd889b6853f69c1943767789c5"
     },
     "yum": {
-      "locked_version": "2.4.2"
+      "locked_version": "3.0.4"
     },
-    "yum-centos": {
-      "locked_version": "0.1.4"
+    "mysql": {
+      "locked_version": "4.0.14"
     },
-    "yum-epel": {
-      "locked_version": "0.2.0"
+    "openssl": {
+      "locked_version": "1.1.0"
     },
     "build-essential": {
       "locked_version": "1.4.2"
     },
-    "mysql": {
-      "locked_version": "4.0.4"
-    },
-    "openssl": {
-      "locked_version": "1.1.0"
+    "apt": {
+      "locked_version": "2.3.4"
     }
   }
 }

@@ -4,7 +4,8 @@
 #
 # Copyright 2013, Aiming, Inc.
 
-include_recipe "yum::remi"
+include_recipe "yum"
+include_recipe "yum-remi"
 include_recipe "mysql::client"
 include_recipe "mysql::server"
 include_recipe "perlbrew::default"
