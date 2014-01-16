@@ -1,5 +1,8 @@
+# Setting of perlbrew
+node.default['perlbrew']['perls'] = ['perl-5.18.2']
+
 # Setting perlbrew version
-node.default['growthforecast']['system']['perlbrew_ver'] = 'perl-5.18.0'
+node.default['growthforecast']['system']['perlbrew_ver'] = 'perl-5.18.2'
 
 node.default['growthforecast']['user']['name'] = 'growthf'
 
