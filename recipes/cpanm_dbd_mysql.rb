@@ -15,11 +15,13 @@ root_db_pass = node['mysql']['server_root_password']
 execute "Empty root password" do
   user  "root"
   group "root"
+  action :nothing
 
   command <<-EOF
     mysql -u root -p#{root_db_pass} -e \
       "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');"
   EOF
+
   notifies :run, "perlbrew_cpanm[Install DBD::MySQL]"
 end
 

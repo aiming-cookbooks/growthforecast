@@ -22,6 +22,9 @@ include_recipe "mysql::server"
 include_recipe "perlbrew::default"
 include_recipe "perlbrew::profile"
 
+include_recipe "growthforecast::cpanm_dbd_mysql"
+include_recipe "growthforecast::cpanm_growthforecast"
+
 %w[pkgconfig glib2-devel gettext libxml2-devel pango-devel cairo-devel].each do |package_name|
   package package_name do
     action :install
@@ -54,7 +57,10 @@ execute "Create growthforecast user to mysql" do
   EOF
 
   not_if "mysql -u #{db_user} -p#{db_pass} growthforecast -e"
+
+  notifies :run, "execute[Empty root password]"
+
 end
 
-include_recipe "growthforecast::cpanm_dbd_mysql"
-include_recipe "growthforecast::cpanm_growthforecast"
+#include_recipe "growthforecast::cpanm_dbd_mysql"
+#include_recipe "growthforecast::cpanm_growthforecast"
